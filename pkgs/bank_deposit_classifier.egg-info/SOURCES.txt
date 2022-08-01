@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+pkgs/bank_deposit_classifier/__init__.py
+pkgs/bank_deposit_classifier/sample.py
+pkgs/bank_deposit_classifier.egg-info/PKG-INFO
+pkgs/bank_deposit_classifier.egg-info/SOURCES.txt
+pkgs/bank_deposit_classifier.egg-info/dependency_links.txt
+pkgs/bank_deposit_classifier.egg-info/top_level.txt
