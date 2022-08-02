@@ -1,0 +1,4 @@
+
+outcome: 'y_yes'
+n_estimators: 150
+max_features: 10
