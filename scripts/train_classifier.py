@@ -42,8 +42,8 @@ test_auc = roc_auc_score(test[outcome], test_predictions)
 import mlflow
 import tempfile
 
-mlflow.set_tracking_uri('http://localhost:5000')
-mlflow.set_experiment('mock-experiment-one')
+mlflow.set_tracking_uri('http://127.0.0.1:5000')
+mlflow.set_experiment('mlflow-experiment-two')
 mlflow.start_run()
 
 mlflow.log_param('n_estimators', n_estimators)
@@ -51,9 +51,11 @@ mlflow.log_param('max_features', max_features)
 mlflow.log_metric('train_auc', train_auc)
 mlflow.log_metric('test_auc', test_auc)
 
+
 with tempfile.TemporaryDirectory() as tmp:
     path = os.path.join(tmp, 'train.csv')
     train.to_csv(path)
     mlflow.log_artifacts(tmp)
 
+mlflow.sklearn.log_model(rf, 'model')
 mlflow.end_run()
